@@ -1,0 +1,96 @@
+// Logarithmic profile inlet condition
+#include "$FOAM_CASE/myVars" //Include global variables
+type fixedValue;
+value #codeStream
+{
+	codeInclude
+	#{
+		#include "fvCFD.H"
+	#};
+
+	codeOptions
+	#{
+		-I$(LIB_SRC)/finiteVolume/lnInclude \
+		-I$(LIB_SRC)/meshTools/lnInclude
+	#};
+
+	codeLibs
+	#{
+		-lmeshTools \
+		-lfiniteVolume
+	#};
+
+	code
+	#{
+		const IOdictionary& d = static_cast<const IOdictionary&>
+		(
+			dict.parent().parent()
+		);
+
+		const fvMesh& mesh = refCast<const fvMesh>(d.db());
+		const label id = mesh.boundary().findPatchID("outlet");
+		const fvPatch& patch = mesh.boundary()[id];
+
+		vectorField U(patch.size(), vector(0, 0, 0));
+                scalarField k(patch.size(), 0.0);
+		const scalar z_0 = 0.52; // Surface roughness length	
+
+		scalar k_h = 0.0; //Height-varying velocity
+               
+               // Fetch U field
+               const volVectorField& UField = mesh.lookupObject<volVectorField>("U");
+               // Fetch alpha field
+        	const volScalarField& alpha = mesh.lookupObject<volScalarField>("alpha.water");
+		// Get the inlet patch
+		const label inletPatchID = mesh.boundaryMesh().findPatchID("outlet");
+		const fvPatch& inletPatch = mesh.boundary()[inletPatchID];
+		const polyPatch& polyInletPatch = inletPatch.patch();
+		
+        	forAll(k, i)
+        	{
+           	 const label faceCell = inletPatch.faceCells()[i]; // Get the cell adjacent to the face on the inlet patch
+    		 const vector faceCenter = inletPatch.Cf()[i]; // Center of the face on the inlet patch
+
+
+            	// Initialize waterline height at the face center as a starting point
+            	scalar z_waterline = faceCenter.z();
+
+            	// Adjust z_waterline to the closest transition point between air and water
+            	scalar minDeltaZ = GREAT; // A large number to start with
+
+            	// Iterate over neighboring cells to find the transition point
+    		forAll(polyInletPatch.faceCells(), patchCellI)
+    		{
+        		label cellID = polyInletPatch.faceCells()[patchCellI];
+        		if (std::abs(mesh.C()[cellID].z() - faceCenter.z()) < minDeltaZ &&
+            		((alpha[faceCell] >= 0.5 && alpha[cellID] < 0.5) ||
+             		(alpha[faceCell] < 0.5 && alpha[cellID] >= 0.5)))
+        		{
+            		minDeltaZ = std::abs(mesh.C()[cellID].z() - faceCenter.z());
+            		z_waterline = mesh.C()[cellID].z();
+        		}
+    		}
+
+            	// Calculate U_h based on the found waterline height
+            	scalar Ux = UField[faceCell].x();
+            	if (faceCenter.z() - z_waterline > z_0) // Above waterline height
+   		{
+        		k_h = 1.5*pow($I*Ux,2) ;
+        		k[i] = k_h;
+        		Info << "Calculated k_h for face " << i << ": " << k_h << endl;
+    		} 
+            	else 
+            	{
+                	k[i] = 0.001;
+                	//Info << "U value set to 0 for face " << i << endl;
+            	}
+        	};
+
+        // ... [existing code] ...
+
+
+		k.writeEntry("",os);
+
+	#};
+
+};

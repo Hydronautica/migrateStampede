@@ -1,0 +1,13 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#------------------------------------------------------------------------------
+
+canCompile || exit 0    # Dynamic code
+touch foam.foam
+# Set aerodynamic field
+./Allrun.pre
+runApplication decomposePar -force
+runParallel waveDyMFoam
+runApplication reconstructPar
+#------------------------------------------------------------------------------

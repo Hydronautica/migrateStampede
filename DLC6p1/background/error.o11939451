@@ -1,0 +1,10 @@
+openfoam (etc/config.sh/mpi) => invalid INTELMPI directory
+    => unset
+Please set I_MPI_ROOT or MPI_ROOT correctly.
+openfoam (etc/config.sh/mpi) => invalid INTELMPI directory
+    => unset
+Please set I_MPI_ROOT or MPI_ROOT correctly.
+openfoam (etc/config.sh/mpi) => invalid INTELMPI directory
+    => unset
+Please set I_MPI_ROOT or MPI_ROOT correctly.
+slurmstepd: error: *** JOB 11939451 ON c479-083 CANCELLED AT 2024-01-09T09:24:28 ***

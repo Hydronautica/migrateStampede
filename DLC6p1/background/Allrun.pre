@@ -1,0 +1,41 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#------------------------------------------------------------------------------
+touch foam.foam
+# Create background mesh
+runApplication blockMesh
+## REFINEMENT
+runApplication topoSet -dict system/topoSetDictRough
+rm log.topoSet
+runApplication refineMesh -dict system/refineMeshDictRough -overwrite
+rm log.refineMesh
+runApplication topoSet -dict system/topoSetDictFine
+rm log.topoSet
+runApplication refineMesh -dict system/refineMeshDictFine -overwrite
+rm log.refineMesh
+runApplication topoSet -dict system/topoSetDictFinest
+rm log.topoSet
+runApplication refineMesh -dict system/refineMeshDictFinest -overwrite
+rm log.refineMesh
+
+# Add the cylinder mesh
+runApplication mergeMeshes . ../floatingBody -overwrite
+runApplication splitMeshRegions -makeCellZones -overwrite
+restore0Dir
+
+# Use cellSets to write zoneID
+runApplication setFields
+
+
+# Compute the wave parameters
+runApplication setWaveParameters
+runApplication waveGaugesNProbes
+# Define relaxation zones (only needed if you want to visualize the resulting layout)
+runApplication relaxationZoneLayout
+
+# Set the wave field
+runApplication setWaveField
+
+#FOAM_SIGFPE=false setExprFields
+#------------------------------------------------------------------------------

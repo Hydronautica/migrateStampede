@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |          
+\*---------------------------------------------------------------------------*/          
+FoamFile                                                                                 
+{   
+    version     2.0;
+    format      ascii;
+    class       volScalarField;                                                          
+    location    "0";                                                                     
+    object      omega;                                                                       
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //          
+#include "../myVars" //Include global variables
+dimensions      [0 0 -1 0 0 0 0];                                                        
+
+//#include        "$FOAM_CASE/0/include/boundaryConditions"
+
+internalField   uniform 0.08904 ; //$turbulentOmega;   // Either initial condition for air velocity or water velocity, not sure yet                                                         
+
+boundaryField                                                                            
+{   
+        #includeEtc "caseDicts/setConstraintTypes"
+         
+	"(stationaryWalls|atmosphere|inlet)"
+	{
+		type	fixedValue;
+		value	$internalField;
+	}
+
+        outlet
+	{
+		type inletOutlet;
+		inletValue $internalField;
+		value $internalField;
+	
+	}
+	
+	/*inlet
+	{
+		
+                
+        	type            offshoreWindTurbulentInlet;
+        	uRef            $Ux;
+        	alpha           0.5;
+        	I               $I;
+        	lRef            $chord;
+        	waterNu         1E-6;
+        	waveNumber      0.0273;
+        	waveHeight      8.1;
+        	waveOmega       0.491;
+        	z0              $z0;
+        	h               $water_depth;
+        	value		 $internalField ;
+        
+	}*/
+	
+ 	floatingObject
+	{
+		type	omegaWallFunction;
+		value	uniform 1e3; //dummy
+	}
+        overset
+	{
+		type	overset;
+	}
+	oversetPatch
+	{
+		type	overset;
+	}
+}
+

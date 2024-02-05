@@ -1,0 +1,133 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+
+    "cellDisplacement.*"
+    {
+        solver          PCG;
+        preconditioner  DIC;
+
+        tolerance       1e-06;
+        relTol          0;
+        maxIter         100;
+    }
+
+"alpha.water.*"
+    {
+        nAlphaCorr      4;
+        nAlphaSubCycles 0;
+        alphaOuterCorrectors yes;
+        cAlpha          0.5;
+
+        MULESCorr       yes;
+        nLimiterIter    7;
+        alphaApplyPrevCorr  yes;
+
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-8;
+        relTol          0;
+    }
+
+    "pcorr.*"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0;
+    }
+
+    p_rgh
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       5e-8;
+        relTol          0.01;
+    }
+
+    p_rghFinal
+    {
+        $p_rgh;
+        relTol          0;
+    }
+
+    "(U|k|omega|epsilon).*"
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-08;
+        relTol          0;
+    }
+
+
+
+    gamma PBiCG
+    {
+        preconditioner   DILU;
+        tolerance        1e-07;
+        relTol           0;
+    };
+    yPsi
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-05;
+        relTol          0.01;
+	maxIter		200;
+    }
+    yPsiFinal
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-08;
+        relTol          0;
+	maxIter		200;
+    } 
+    
+}
+
+PIMPLE
+{
+    momentumPredictor   no;
+    nOuterCorrectors    3;
+    nCorrectors         3;
+    nNonOrthogonalCorrectors 1;
+    massFluxInterpolation	no;
+    ddtCorr                    yes;
+    correctPhi                 no;
+    checkMeshCourantNo		yes;
+    moveMeshOuterCorrectors yes;
+    turbOnFinalIterOnly no;
+    oversetAdjustPhi    no;
+}
+
+relaxationFactors
+{
+    fields
+    {
+    }
+    equations
+    {
+            ".*" 0.9;
+    }
+}
+
+cache
+{ grad(U);}
+
+// ************************************************************************* //

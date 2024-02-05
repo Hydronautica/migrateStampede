@@ -1,0 +1,72 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+#include "../myVars" //Include global variables
+actions
+(
+    
+    {
+        name    overSetFinest;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+     	 box (#eval "$plat_offset_X-0.40*$D" #eval "$plat_offset_Y-0.37*$D" -40) (#eval "$plat_offset_X+0.36*$D" #eval "$plat_offset_Y+0.37*$D" 33);
+   	}
+    }
+    {
+        name    waterLineFinest;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+     	 box ($xmin  #eval "$ymin" #eval "-3*$wave_height") ($xmax  #eval "$ymax" #eval "3*$wave_height");
+   	}
+    }
+    
+    
+    
+    
+    
+    {
+   	 // Mandatory (inherited) entries
+    	name        combinedFinest;
+    	type        cellZoneSet;
+    	action      new;
+
+    	// Mandatory entries
+    	source      setToCellZone;
+    	set         waterLineFinest;
+    }  
+     {
+   	 // Mandatory (inherited) entries
+    	name        combinedFinest;
+    	type        cellZoneSet;
+    	action      add;
+
+    	// Mandatory entries
+    	source      setToCellZone;
+    	set         overSetFinest;
+    }  
+
+   
+
+    
+);
+
+
+// ************************************************************************* //

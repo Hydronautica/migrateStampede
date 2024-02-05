@@ -1,0 +1,1309 @@
+
+*********************************************************
+***                                                   ***
+*** OceanWave3D - a coastal engineering tool for      ***
+*** simulation of nonlinear free surface waves.       ***
+*** Copyright (C) 2009 Allan P. Engsig-Karup.         ***
+***                                                   ***
+*** This OceanWave3D program comes with ABSOLUTELY NO ***
+*** WARRANTY. It is distributed under the conditions  ***
+*** of the GNU General Public License version 3.      ***
+***                                                   ***
+***     Software library developed in 2009 by         ***
+***                                                   ***
+***     Allan P. Engsig-Karup                         ***
+***     Guillaume Ducrozet                            ***
+***                                                   ***
+*** At DTU Informatics                                ***
+***    Scientific Computing Section                   ***
+***    Technical University of Denmark                ***
+***                                                   ***
+***     Original software library written in 2007 by  ***
+***                                                   ***
+***     Allan P. Engsig-Karup                         ***
+***     Harry B. Bingham                              ***
+***                                                   ***
+*** At Department of Mechanical Engineering           ***
+***    Coastal, Maritime and Structural Eng. Section  ***
+***    Technical University of Denmark                ***
+***                                                   ***
+*********************************************************
+
+   Input file with model parameters : OceanWave3D.inp                         
+
+   Header title.................... : Header                                                                  
+
+   PARAMETER INPUT
+
+   Initial Condition (IC), Predefined :   0
+
+   Local filtering downward vertical acceleration limit is:   0.9000
+ * g m/s^2.  Theoretically breaking should occur between 0.5 and 1.
+
+
+   Bathymetry                         : Predefined (in setup for IC)
+   Size of dx: .6128E+01
+
+   The problem is without a y-dimension.
+
+   Uneven node-distribution in Z
+   Ghost point layer included below bottom.
+
+   Half-width stencils: (alpha,beta,gamma)=( 3, 0, 3)
+   Half-width stencils: (alpha,beta,gamma)=( 1, 0, 1) (Preconditioner)
+ Starting time for this run is    0.0000000000000000     
+   Number of time steps chosen:   150000
+   Size of time increment: .5000E-01
+    Time-integration method: Classical Runge-Kutta fourth order
+    GMRES method is chosen.
+    Strategy: GMRES + LU (order            2 )
+    Tolerance levels user-defined. RelTol =    1.0000000000000000E-008  and AbsTol =    9.9999999999999995E-007
+ 
+   Fully nonlinear model is employed.
+
+ No free-surface pressure term is being applied.  
+
+    SG(          13 ,          10 )-filtering will be employed after every            1  time step.
+  
+ No breaking model line found, the feature is off.
+  
+     Total relaxation zones defined:            1
+  
+ Found            1  pressure damping zones.
+   Standard Cartesian model employed.
+
+   Found            1  generation zones for the linear wave. (Only used for IncWaveType==2)
+  
+ FilterInit:  Boundary filtering is turned on with values:
+   8.0000000000000002E-002   8.0000000000000002E-002  0.40000000000000002     
+  
+ Initializing variables and arrays.
+ Relaxation zone setup:
+  Zone  1: idx=(     2,    84,     1,     1)
+   Relaxation zones have been setup.
+  
+ The incident wave will be read from file wave_elevation.txt            
+
+ Zone            1 :
+ The generated wave is centered at (x,y)=(   1035.0000000000000      ,   0.0000000000000000      ) in a depth of   200.00000000000000       This generation zone contains           83  grid points.
+ setup ICs...
+ IC chosen is case            0
+ Initial condition is still water.
+ done with ICs
+  
+ Pressure damping zones are set up
+  
+   Preconditioner: DIRECT LU ( 2 order, linear)
+ Building stencils...
+   Preconditioning matrix generated.
+ Determine finite difference stencils for the system matrix...
+ Building stencils...
+ ...done!
+ A total of      175 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    43.75 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ A total of      259 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    32.38 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ An average of    42.00 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       18 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      343 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    28.58 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ An average of    31.50 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       18 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      426 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    26.62 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ An average of    27.92 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       18 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      509 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    25.45 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ An average of    26.12 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       18 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      591 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    24.62 GMRES iterations done per solve.
+   Minimum no.       18 and maximum no.       23 iterations per solve
+ An average of    25.00 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       18 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      672 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    24.00 GMRES iterations done per solve.
+   Minimum no.       17 and maximum no.       23 iterations per solve
+ An average of    24.21 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       17 and maximum no.       23 iterations per solve excluding first time step solves
+ A total of      753 GMRES iterations done.
+ A total of       91 GMRES iterations done in first time step.
+ An average of    23.53 GMRES iterations done per solve.
+   Minimum no.       17 and maximum no.       23 iterations per solve
+ An average of    23.64 GMRES iterations done per solve excluding first time step iteration counts.
+   Minimum no.       17 and maximum no.       23 iterations per solve excluding first time step solves
+   Loop no.       10   Time =    0.2304 sec.
+ time step number           10  t=  0.25600000000000006     
+ An average of    23.11 GMRES iterations done per solve.
+   Minimum no.       16 and maximum no.       23 iterations per solve
+   Loop no.       20   Time =    0.4864 sec.
+ time step number           20  t=  0.51200000000000012     
+ An average of    21.08 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       30   Time =    0.7424 sec.
+ time step number           30  t=  0.76799999999999968     
+ An average of    20.36 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       40   Time =    0.9984 sec.
+ time step number           40  t=   1.0239999999999994     
+ An average of    19.98 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       50   Time =    1.2544 sec.
+ time step number           50  t=   1.2800000000000000     
+ An average of    19.81 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.       60   Time =    1.5104 sec.
+ time step number           60  t=   1.5360000000000007     
+ An average of    19.71 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       70   Time =    1.7664 sec.
+ time step number           70  t=   1.7920000000000014     
+ An average of    19.66 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       80   Time =    2.0224 sec.
+ time step number           80  t=   2.0480000000000018     
+ An average of    19.60 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.       90   Time =    2.2784 sec.
+ time step number           90  t=   2.3040000000000003     
+ An average of    19.55 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      100   Time =    2.5344 sec.
+ time step number          100  t=   2.5599999999999987     
+ An average of    19.52 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      110   Time =    2.7904 sec.
+ time step number          110  t=   2.8159999999999972     
+ An average of    19.49 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      120   Time =    3.0464 sec.
+ time step number          120  t=   3.0719999999999956     
+ An average of    19.46 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      130   Time =    3.3024 sec.
+ time step number          130  t=   3.3279999999999941     
+ An average of    19.43 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      140   Time =    3.5584 sec.
+ time step number          140  t=   3.5839999999999925     
+ An average of    19.39 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      150   Time =    3.8144 sec.
+ time step number          150  t=   3.8399999999999910     
+ An average of    19.37 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      160   Time =    4.0704 sec.
+ time step number          160  t=   4.0959999999999894     
+ An average of    19.37 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      170   Time =    4.3264 sec.
+ time step number          170  t=   4.3519999999999879     
+ An average of    19.38 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      180   Time =    4.5824 sec.
+ time step number          180  t=   4.6079999999999863     
+ An average of    19.37 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      190   Time =    4.8384 sec.
+ time step number          190  t=   4.8639999999999848     
+ An average of    19.38 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      200   Time =    5.0944 sec.
+ time step number          200  t=   5.1199999999999832     
+ An average of    19.39 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      210   Time =    5.3504 sec.
+ time step number          210  t=   5.3759999999999817     
+ An average of    19.41 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      220   Time =    5.6064 sec.
+ time step number          220  t=   5.6319999999999801     
+ An average of    19.42 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      230   Time =    5.8624 sec.
+ time step number          230  t=   5.8879999999999786     
+ An average of    19.43 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      240   Time =    6.1184 sec.
+ time step number          240  t=   6.1439999999999770     
+ An average of    19.42 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      250   Time =    6.3744 sec.
+ time step number          250  t=   6.3999999999999755     
+ An average of    19.41 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      260   Time =    6.6304 sec.
+ time step number          260  t=   6.6559999999999739     
+ An average of    19.41 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      270   Time =    6.8864 sec.
+ time step number          270  t=   6.9119999999999724     
+ An average of    19.39 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      280   Time =    7.1424 sec.
+ time step number          280  t=   7.1679999999999708     
+ An average of    19.38 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      290   Time =    7.3984 sec.
+ time step number          290  t=   7.4239999999999693     
+ An average of    19.37 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      300   Time =    7.6544 sec.
+ time step number          300  t=   7.6799999999999677     
+ An average of    19.36 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      310   Time =    7.9104 sec.
+ time step number          310  t=   7.9359999999999662     
+ An average of    19.35 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      320   Time =    8.1664 sec.
+ time step number          320  t=   8.1919999999999717     
+ An average of    19.33 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      330   Time =    8.4224 sec.
+ time step number          330  t=   8.4479999999999791     
+ An average of    19.33 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      340   Time =    8.6784 sec.
+ time step number          340  t=   8.7039999999999864     
+ An average of    19.32 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      350   Time =    8.9344 sec.
+ time step number          350  t=   8.9599999999999937     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      360   Time =    9.1904 sec.
+ time step number          360  t=   9.2160000000000011     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      370   Time =    9.4464 sec.
+ time step number          370  t=   9.4720000000000084     
+ An average of    19.30 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      380   Time =    9.7024 sec.
+ time step number          380  t=   9.7280000000000157     
+ An average of    19.29 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      390   Time =    9.9584 sec.
+ time step number          390  t=   9.9840000000000231     
+ An average of    19.28 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      400   Time =   10.2144 sec.
+ time step number          400  t=   10.240000000000030     
+ An average of    19.27 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      410   Time =   10.4704 sec.
+ time step number          410  t=   10.496000000000038     
+ An average of    19.27 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      420   Time =   10.7264 sec.
+ time step number          420  t=   10.752000000000045     
+ An average of    19.27 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      430   Time =   10.9824 sec.
+ time step number          430  t=   11.008000000000052     
+ An average of    19.28 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      440   Time =   11.2384 sec.
+ time step number          440  t=   11.264000000000060     
+ An average of    19.29 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      450   Time =   11.4944 sec.
+ time step number          450  t=   11.520000000000067     
+ An average of    19.29 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      460   Time =   11.7504 sec.
+ time step number          460  t=   11.776000000000074     
+ An average of    19.30 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      470   Time =   12.0064 sec.
+ time step number          470  t=   12.032000000000082     
+ An average of    19.30 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      480   Time =   12.2624 sec.
+ time step number          480  t=   12.288000000000089     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      490   Time =   12.5184 sec.
+ time step number          490  t=   12.544000000000096     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      500   Time =   12.7744 sec.
+ time step number          500  t=   12.800000000000104     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      510   Time =   13.0304 sec.
+ time step number          510  t=   13.056000000000111     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      520   Time =   13.2864 sec.
+ time step number          520  t=   13.312000000000118     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      530   Time =   13.5424 sec.
+ time step number          530  t=   13.568000000000126     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      540   Time =   13.7984 sec.
+ time step number          540  t=   13.824000000000133     
+ An average of    19.30 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      550   Time =   14.0544 sec.
+ time step number          550  t=   14.080000000000140     
+ An average of    19.29 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      560   Time =   14.3104 sec.
+ time step number          560  t=   14.336000000000148     
+ An average of    19.27 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      570   Time =   14.5664 sec.
+ time step number          570  t=   14.592000000000155     
+ An average of    19.26 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      580   Time =   14.8224 sec.
+ time step number          580  t=   14.848000000000162     
+ An average of    19.25 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      590   Time =   15.0784 sec.
+ time step number          590  t=   15.104000000000170     
+ An average of    19.24 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      600   Time =   15.3344 sec.
+ time step number          600  t=   15.360000000000177     
+ An average of    19.23 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      610   Time =   15.5904 sec.
+ time step number          610  t=   15.616000000000184     
+ An average of    19.21 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      620   Time =   15.8464 sec.
+ time step number          620  t=   15.872000000000192     
+ An average of    19.20 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      630   Time =   16.1024 sec.
+ time step number          630  t=   16.128000000000199     
+ An average of    19.19 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      640   Time =   16.3584 sec.
+ time step number          640  t=   16.384000000000206     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       12 and maximum no.       23 iterations per solve
+   Loop no.      650   Time =   16.6144 sec.
+ time step number          650  t=   16.640000000000214     
+ An average of    19.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      660   Time =   16.8704 sec.
+ time step number          660  t=   16.896000000000221     
+ An average of    19.15 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      670   Time =   17.1264 sec.
+ time step number          670  t=   17.152000000000228     
+ An average of    19.14 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      680   Time =   17.3824 sec.
+ time step number          680  t=   17.408000000000236     
+ An average of    19.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      690   Time =   17.6384 sec.
+ time step number          690  t=   17.664000000000243     
+ An average of    19.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      700   Time =   17.8944 sec.
+ time step number          700  t=   17.920000000000250     
+ An average of    19.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      710   Time =   18.1504 sec.
+ time step number          710  t=   18.176000000000258     
+ An average of    19.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      720   Time =   18.4064 sec.
+ time step number          720  t=   18.432000000000265     
+ An average of    19.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      730   Time =   18.6624 sec.
+ time step number          730  t=   18.688000000000272     
+ An average of    19.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      740   Time =   18.9184 sec.
+ time step number          740  t=   18.944000000000280     
+ An average of    19.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      750   Time =   19.1744 sec.
+ time step number          750  t=   19.200000000000287     
+ An average of    19.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      760   Time =   19.4304 sec.
+ time step number          760  t=   19.456000000000294     
+ An average of    19.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      770   Time =   19.6864 sec.
+ time step number          770  t=   19.712000000000302     
+ An average of    19.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      780   Time =   19.9424 sec.
+ time step number          780  t=   19.968000000000309     
+ An average of    19.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      790   Time =   20.1984 sec.
+ time step number          790  t=   20.224000000000316     
+ An average of    19.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      800   Time =   20.4544 sec.
+ time step number          800  t=   20.480000000000324     
+ An average of    19.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      810   Time =   20.7104 sec.
+ time step number          810  t=   20.736000000000331     
+ An average of    19.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      820   Time =   20.9664 sec.
+ time step number          820  t=   20.992000000000338     
+ An average of    19.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      830   Time =   21.2224 sec.
+ time step number          830  t=   21.248000000000346     
+ An average of    19.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      840   Time =   21.4784 sec.
+ time step number          840  t=   21.504000000000353     
+ An average of    19.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      850   Time =   21.7344 sec.
+ time step number          850  t=   21.760000000000360     
+ An average of    19.14 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      860   Time =   21.9904 sec.
+ time step number          860  t=   22.016000000000368     
+ An average of    19.14 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      870   Time =   22.2464 sec.
+ time step number          870  t=   22.272000000000375     
+ An average of    19.15 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      880   Time =   22.5024 sec.
+ time step number          880  t=   22.528000000000382     
+ An average of    19.15 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      890   Time =   22.7584 sec.
+ time step number          890  t=   22.784000000000390     
+ An average of    19.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      900   Time =   23.0144 sec.
+ time step number          900  t=   23.040000000000397     
+ An average of    19.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      910   Time =   23.2704 sec.
+ time step number          910  t=   23.296000000000404     
+ An average of    19.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      920   Time =   23.5264 sec.
+ time step number          920  t=   23.552000000000412     
+ An average of    19.17 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      930   Time =   23.7824 sec.
+ time step number          930  t=   23.808000000000419     
+ An average of    19.17 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      940   Time =   24.0384 sec.
+ time step number          940  t=   24.064000000000426     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      950   Time =   24.2944 sec.
+ time step number          950  t=   24.320000000000434     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.      960   Time =   24.5504 sec.
+ time step number          960  t=   24.576000000000441     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      970   Time =   24.8064 sec.
+ time step number          970  t=   24.832000000000448     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      980   Time =   25.0624 sec.
+ time step number          980  t=   25.088000000000456     
+ An average of    19.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.      990   Time =   25.3184 sec.
+ time step number          990  t=   25.344000000000463     
+ An average of    19.19 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1000   Time =   25.5744 sec.
+ time step number         1000  t=   25.600000000000470     
+ An average of    19.19 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1010   Time =   25.8304 sec.
+ time step number         1010  t=   25.856000000000478     
+ An average of    19.20 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1020   Time =   26.0864 sec.
+ time step number         1020  t=   26.112000000000485     
+ An average of    19.21 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1030   Time =   26.3424 sec.
+ time step number         1030  t=   26.368000000000492     
+ An average of    19.22 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1040   Time =   26.5984 sec.
+ time step number         1040  t=   26.624000000000500     
+ An average of    19.23 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1050   Time =   26.8544 sec.
+ time step number         1050  t=   26.880000000000507     
+ An average of    19.24 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1060   Time =   27.1104 sec.
+ time step number         1060  t=   27.136000000000514     
+ An average of    19.25 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1070   Time =   27.3664 sec.
+ time step number         1070  t=   27.392000000000522     
+ An average of    19.26 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1080   Time =   27.6224 sec.
+ time step number         1080  t=   27.648000000000529     
+ An average of    19.27 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1090   Time =   27.8784 sec.
+ time step number         1090  t=   27.904000000000536     
+ An average of    19.28 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1100   Time =   28.1344 sec.
+ time step number         1100  t=   28.160000000000544     
+ An average of    19.29 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1110   Time =   28.3904 sec.
+ time step number         1110  t=   28.416000000000551     
+ An average of    19.30 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1120   Time =   28.6464 sec.
+ time step number         1120  t=   28.672000000000558     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1130   Time =   28.9024 sec.
+ time step number         1130  t=   28.928000000000566     
+ An average of    19.31 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1140   Time =   29.1584 sec.
+ time step number         1140  t=   29.184000000000573     
+ An average of    19.32 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1150   Time =   29.4144 sec.
+ time step number         1150  t=   29.440000000000580     
+ An average of    19.33 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1160   Time =   29.6704 sec.
+ time step number         1160  t=   29.696000000000588     
+ An average of    19.34 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1170   Time =   29.9264 sec.
+ time step number         1170  t=   29.952000000000595     
+ An average of    19.34 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1180   Time =   30.1824 sec.
+ time step number         1180  t=   30.208000000000602     
+ An average of    19.35 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1190   Time =   30.4384 sec.
+ time step number         1190  t=   30.464000000000610     
+ An average of    19.36 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1200   Time =   30.6944 sec.
+ time step number         1200  t=   30.720000000000617     
+ An average of    19.36 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1210   Time =   30.9504 sec.
+ time step number         1210  t=   30.976000000000624     
+ An average of    19.37 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1220   Time =   31.2064 sec.
+ time step number         1220  t=   31.232000000000632     
+ An average of    19.38 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1230   Time =   31.4624 sec.
+ time step number         1230  t=   31.488000000000639     
+ An average of    19.38 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1240   Time =   31.7184 sec.
+ time step number         1240  t=   31.744000000000646     
+ An average of    19.39 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1250   Time =   31.9744 sec.
+ time step number         1250  t=   32.000000000000654     
+ An average of    19.39 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1260   Time =   32.2304 sec.
+ time step number         1260  t=   32.256000000000626     
+ An average of    19.40 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1270   Time =   32.4864 sec.
+ time step number         1270  t=   32.512000000000597     
+ An average of    19.40 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1280   Time =   32.7424 sec.
+ time step number         1280  t=   32.768000000000569     
+ An average of    19.41 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1290   Time =   32.9984 sec.
+ time step number         1290  t=   33.024000000000541     
+ An average of    19.42 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1300   Time =   33.2544 sec.
+ time step number         1300  t=   33.280000000000513     
+ An average of    19.43 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1310   Time =   33.5104 sec.
+ time step number         1310  t=   33.536000000000485     
+ An average of    19.43 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1320   Time =   33.7664 sec.
+ time step number         1320  t=   33.792000000000456     
+ An average of    19.44 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1330   Time =   34.0224 sec.
+ time step number         1330  t=   34.048000000000428     
+ An average of    19.45 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1340   Time =   34.2784 sec.
+ time step number         1340  t=   34.304000000000400     
+ An average of    19.46 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1350   Time =   34.5344 sec.
+ time step number         1350  t=   34.560000000000372     
+ An average of    19.47 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1360   Time =   34.7904 sec.
+ time step number         1360  t=   34.816000000000344     
+ An average of    19.48 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1370   Time =   35.0464 sec.
+ time step number         1370  t=   35.072000000000315     
+ An average of    19.49 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1380   Time =   35.3024 sec.
+ time step number         1380  t=   35.328000000000287     
+ An average of    19.51 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1390   Time =   35.5584 sec.
+ time step number         1390  t=   35.584000000000259     
+ An average of    19.52 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1400   Time =   35.8144 sec.
+ time step number         1400  t=   35.840000000000231     
+ An average of    19.54 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1410   Time =   36.0704 sec.
+ time step number         1410  t=   36.096000000000203     
+ An average of    19.55 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1420   Time =   36.3264 sec.
+ time step number         1420  t=   36.352000000000174     
+ An average of    19.56 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1430   Time =   36.5824 sec.
+ time step number         1430  t=   36.608000000000146     
+ An average of    19.57 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1440   Time =   36.8384 sec.
+ time step number         1440  t=   36.864000000000118     
+ An average of    19.57 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1450   Time =   37.0944 sec.
+ time step number         1450  t=   37.120000000000090     
+ An average of    19.58 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1460   Time =   37.3504 sec.
+ time step number         1460  t=   37.376000000000062     
+ An average of    19.59 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1470   Time =   37.6064 sec.
+ time step number         1470  t=   37.632000000000033     
+ An average of    19.60 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1480   Time =   37.8624 sec.
+ time step number         1480  t=   37.888000000000005     
+ An average of    19.61 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1490   Time =   38.1184 sec.
+ time step number         1490  t=   38.143999999999977     
+ An average of    19.62 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1500   Time =   38.3744 sec.
+ time step number         1500  t=   38.399999999999949     
+ An average of    19.63 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1510   Time =   38.6304 sec.
+ time step number         1510  t=   38.655999999999921     
+ An average of    19.63 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1520   Time =   38.8864 sec.
+ time step number         1520  t=   38.911999999999892     
+ An average of    19.64 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1530   Time =   39.1424 sec.
+ time step number         1530  t=   39.167999999999864     
+ An average of    19.65 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1540   Time =   39.3984 sec.
+ time step number         1540  t=   39.423999999999836     
+ An average of    19.66 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1550   Time =   39.6544 sec.
+ time step number         1550  t=   39.679999999999808     
+ An average of    19.67 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1560   Time =   39.9104 sec.
+ time step number         1560  t=   39.935999999999780     
+ An average of    19.68 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1570   Time =   40.1664 sec.
+ time step number         1570  t=   40.191999999999751     
+ An average of    19.68 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1580   Time =   40.4224 sec.
+ time step number         1580  t=   40.447999999999723     
+ An average of    19.69 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1590   Time =   40.6784 sec.
+ time step number         1590  t=   40.703999999999695     
+ An average of    19.70 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1600   Time =   40.9344 sec.
+ time step number         1600  t=   40.959999999999667     
+ An average of    19.71 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1610   Time =   41.1904 sec.
+ time step number         1610  t=   41.215999999999639     
+ An average of    19.72 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1620   Time =   41.4464 sec.
+ time step number         1620  t=   41.471999999999611     
+ An average of    19.73 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1630   Time =   41.7024 sec.
+ time step number         1630  t=   41.727999999999582     
+ An average of    19.74 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1640   Time =   41.9584 sec.
+ time step number         1640  t=   41.983999999999554     
+ An average of    19.75 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1650   Time =   42.2144 sec.
+ time step number         1650  t=   42.239999999999526     
+ An average of    19.75 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1660   Time =   42.4704 sec.
+ time step number         1660  t=   42.495999999999498     
+ An average of    19.76 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1670   Time =   42.7264 sec.
+ time step number         1670  t=   42.751999999999470     
+ An average of    19.77 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1680   Time =   42.9824 sec.
+ time step number         1680  t=   43.007999999999441     
+ An average of    19.78 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1690   Time =   43.2384 sec.
+ time step number         1690  t=   43.263999999999413     
+ An average of    19.79 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1700   Time =   43.4944 sec.
+ time step number         1700  t=   43.519999999999385     
+ An average of    19.79 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1710   Time =   43.7504 sec.
+ time step number         1710  t=   43.775999999999357     
+ An average of    19.80 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1720   Time =   44.0064 sec.
+ time step number         1720  t=   44.031999999999329     
+ An average of    19.81 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1730   Time =   44.2624 sec.
+ time step number         1730  t=   44.287999999999300     
+ An average of    19.81 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1740   Time =   44.5184 sec.
+ time step number         1740  t=   44.543999999999272     
+ An average of    19.82 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1750   Time =   44.7744 sec.
+ time step number         1750  t=   44.799999999999244     
+ An average of    19.82 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1760   Time =   45.0304 sec.
+ time step number         1760  t=   45.055999999999216     
+ An average of    19.82 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1770   Time =   45.2864 sec.
+ time step number         1770  t=   45.311999999999188     
+ An average of    19.83 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1780   Time =   45.5424 sec.
+ time step number         1780  t=   45.567999999999159     
+ An average of    19.83 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1790   Time =   45.7984 sec.
+ time step number         1790  t=   45.823999999999131     
+ An average of    19.84 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1800   Time =   46.0544 sec.
+ time step number         1800  t=   46.079999999999103     
+ An average of    19.84 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1810   Time =   46.3104 sec.
+ time step number         1810  t=   46.335999999999075     
+ An average of    19.85 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1820   Time =   46.5664 sec.
+ time step number         1820  t=   46.591999999999047     
+ An average of    19.85 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1830   Time =   46.8224 sec.
+ time step number         1830  t=   46.847999999999018     
+ An average of    19.86 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1840   Time =   47.0784 sec.
+ time step number         1840  t=   47.103999999998990     
+ An average of    19.87 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1850   Time =   47.3344 sec.
+ time step number         1850  t=   47.359999999998962     
+ An average of    19.88 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1860   Time =   47.5904 sec.
+ time step number         1860  t=   47.615999999998934     
+ An average of    19.89 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1870   Time =   47.8464 sec.
+ time step number         1870  t=   47.871999999998906     
+ An average of    19.90 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1880   Time =   48.1024 sec.
+ time step number         1880  t=   48.127999999998877     
+ An average of    19.91 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1890   Time =   48.3584 sec.
+ time step number         1890  t=   48.383999999998849     
+ An average of    19.92 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1900   Time =   48.6144 sec.
+ time step number         1900  t=   48.639999999998821     
+ An average of    19.93 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1910   Time =   48.8704 sec.
+ time step number         1910  t=   48.895999999998793     
+ An average of    19.94 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1920   Time =   49.1264 sec.
+ time step number         1920  t=   49.151999999998765     
+ An average of    19.95 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1930   Time =   49.3824 sec.
+ time step number         1930  t=   49.407999999998736     
+ An average of    19.95 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1940   Time =   49.6384 sec.
+ time step number         1940  t=   49.663999999998708     
+ An average of    19.96 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1950   Time =   49.8944 sec.
+ time step number         1950  t=   49.919999999998680     
+ An average of    19.96 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     1960   Time =   50.1504 sec.
+ time step number         1960  t=   50.175999999998652     
+ An average of    19.97 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1970   Time =   50.4064 sec.
+ time step number         1970  t=   50.431999999998624     
+ An average of    19.97 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1980   Time =   50.6624 sec.
+ time step number         1980  t=   50.687999999998596     
+ An average of    19.98 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     1990   Time =   50.9184 sec.
+ time step number         1990  t=   50.943999999998567     
+ An average of    19.98 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2000   Time =   51.1744 sec.
+ time step number         2000  t=   51.199999999998539     
+ An average of    19.99 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2010   Time =   51.4304 sec.
+ time step number         2010  t=   51.455999999998511     
+ An average of    19.99 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2020   Time =   51.6864 sec.
+ time step number         2020  t=   51.711999999998483     
+ An average of    20.00 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2030   Time =   51.9424 sec.
+ time step number         2030  t=   51.967999999998455     
+ An average of    20.00 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2040   Time =   52.1984 sec.
+ time step number         2040  t=   52.223999999998426     
+ An average of    20.01 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2050   Time =   52.4544 sec.
+ time step number         2050  t=   52.479999999998398     
+ An average of    20.01 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2060   Time =   52.7104 sec.
+ time step number         2060  t=   52.735999999998370     
+ An average of    20.02 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2070   Time =   52.9664 sec.
+ time step number         2070  t=   52.991999999998342     
+ An average of    20.02 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2080   Time =   53.2224 sec.
+ time step number         2080  t=   53.247999999998314     
+ An average of    20.03 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2090   Time =   53.4784 sec.
+ time step number         2090  t=   53.503999999998285     
+ An average of    20.04 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2100   Time =   53.7344 sec.
+ time step number         2100  t=   53.759999999998257     
+ An average of    20.04 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2110   Time =   53.9904 sec.
+ time step number         2110  t=   54.015999999998229     
+ An average of    20.05 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2120   Time =   54.2464 sec.
+ time step number         2120  t=   54.271999999998201     
+ An average of    20.05 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2130   Time =   54.5024 sec.
+ time step number         2130  t=   54.527999999998173     
+ An average of    20.06 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2140   Time =   54.7584 sec.
+ time step number         2140  t=   54.783999999998144     
+ An average of    20.06 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2150   Time =   55.0144 sec.
+ time step number         2150  t=   55.039999999998116     
+ An average of    20.07 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2160   Time =   55.2704 sec.
+ time step number         2160  t=   55.295999999998088     
+ An average of    20.08 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2170   Time =   55.5264 sec.
+ time step number         2170  t=   55.551999999998060     
+ An average of    20.08 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2180   Time =   55.7824 sec.
+ time step number         2180  t=   55.807999999998032     
+ An average of    20.09 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2190   Time =   56.0384 sec.
+ time step number         2190  t=   56.063999999998003     
+ An average of    20.09 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2200   Time =   56.2944 sec.
+ time step number         2200  t=   56.319999999997975     
+ An average of    20.09 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2210   Time =   56.5504 sec.
+ time step number         2210  t=   56.576022561690110     
+ An average of    20.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2220   Time =   56.8065 sec.
+ time step number         2220  t=   56.832060164510352     
+ An average of    20.10 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2230   Time =   57.0625 sec.
+ time step number         2230  t=   57.088097767330595     
+ An average of    20.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2240   Time =   57.3185 sec.
+ time step number         2240  t=   57.344135370150838     
+ An average of    20.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2250   Time =   57.5746 sec.
+ time step number         2250  t=   57.600172972971080     
+ An average of    20.11 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2260   Time =   57.8306 sec.
+ time step number         2260  t=   57.856210575791323     
+ An average of    20.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2270   Time =   58.0866 sec.
+ time step number         2270  t=   58.112248178611566     
+ An average of    20.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2280   Time =   58.3427 sec.
+ time step number         2280  t=   58.368285781431808     
+ An average of    20.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2290   Time =   58.5987 sec.
+ time step number         2290  t=   58.624323384252051     
+ An average of    20.12 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2300   Time =   58.8548 sec.
+ time step number         2300  t=   58.880360987072294     
+ An average of    20.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2310   Time =   59.1108 sec.
+ time step number         2310  t=   59.136398589892536     
+ An average of    20.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2320   Time =   59.3668 sec.
+ time step number         2320  t=   59.392436192712779     
+ An average of    20.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2330   Time =   59.6229 sec.
+ time step number         2330  t=   59.648473795533022     
+ An average of    20.13 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2340   Time =   59.8789 sec.
+ time step number         2340  t=   59.904511398353264     
+ An average of    20.14 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2350   Time =   60.1349 sec.
+ time step number         2350  t=   60.160549001173507     
+ An average of    20.14 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2360   Time =   60.3910 sec.
+ time step number         2360  t=   60.416586603993750     
+ An average of    20.15 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2370   Time =   60.6470 sec.
+ time step number         2370  t=   60.672624206813992     
+ An average of    20.15 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2380   Time =   60.9031 sec.
+ time step number         2380  t=   60.928661809634235     
+ An average of    20.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2390   Time =   61.1591 sec.
+ time step number         2390  t=   61.184699412454478     
+ An average of    20.16 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2400   Time =   61.4151 sec.
+ time step number         2400  t=   61.440737015274721     
+ An average of    20.17 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2410   Time =   61.6712 sec.
+ time step number         2410  t=   61.696774618094963     
+ An average of    20.17 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2420   Time =   61.9272 sec.
+ time step number         2420  t=   61.952812220915206     
+ An average of    20.18 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2430   Time =   62.1832 sec.
+ time step number         2430  t=   62.208849823735449     
+ An average of    20.19 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2440   Time =   62.4393 sec.
+ time step number         2440  t=   62.464887426555691     
+ An average of    20.19 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2450   Time =   62.6953 sec.
+ time step number         2450  t=   62.720925029375934     
+ An average of    20.20 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2460   Time =   62.9514 sec.
+ time step number         2460  t=   62.976962632196177     
+ An average of    20.20 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2470   Time =   63.2074 sec.
+ time step number         2470  t=   63.233000235016419     
+ An average of    20.21 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2480   Time =   63.4634 sec.
+ time step number         2480  t=   63.489037837836662     
+ An average of    20.21 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2490   Time =   63.7195 sec.
+ time step number         2490  t=   63.745075440656905     
+ An average of    20.21 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2500   Time =   63.9755 sec.
+ time step number         2500  t=   64.001113043477147     
+ An average of    20.22 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2510   Time =   64.2315 sec.
+ time step number         2510  t=   64.257150646297390     
+ An average of    20.22 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2520   Time =   64.4876 sec.
+ time step number         2520  t=   64.513188249117633     
+ An average of    20.22 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2530   Time =   64.7436 sec.
+ time step number         2530  t=   64.769225851937875     
+ An average of    20.23 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2540   Time =   64.9997 sec.
+ time step number         2540  t=   65.025263454758118     
+ An average of    20.23 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2550   Time =   65.2557 sec.
+ time step number         2550  t=   65.281301057578361     
+ An average of    20.23 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2560   Time =   65.5117 sec.
+ time step number         2560  t=   65.537338660398603     
+ An average of    20.23 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2570   Time =   65.7678 sec.
+ time step number         2570  t=   65.793376263218846     
+ An average of    20.24 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2580   Time =   66.0238 sec.
+ time step number         2580  t=   66.049413866039089     
+ An average of    20.24 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2590   Time =   66.2798 sec.
+ time step number         2590  t=   66.305451468859331     
+ An average of    20.24 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2600   Time =   66.5359 sec.
+ time step number         2600  t=   66.561489071679574     
+ An average of    20.25 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+Writing OceanWave3D.end file, for possible restart.
+Change the file name to OceanWave3D.init and change IC to -1 for a hot start.
+   Loop no.     2610   Time =   66.7919 sec.
+ time step number         2610  t=   66.817526674499817     
+ An average of    20.25 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2620   Time =   67.0480 sec.
+ time step number         2620  t=   67.073564277320060     
+ An average of    20.25 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2630   Time =   67.4925 sec.
+ time step number         2630  t=   67.543732356965620     
+ An average of    20.26 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2640   Time =   68.0045 sec.
+ time step number         2640  t=   68.055660868685379     
+ An average of    20.27 GMRES iterations done per solve.
+   Minimum no.       11 and maximum no.       23 iterations per solve
+   Loop no.     2650   Time =   68.5164 sec.
+ time step number         2650  t=   68.567589380405138     

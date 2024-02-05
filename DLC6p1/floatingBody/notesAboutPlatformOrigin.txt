@@ -1,0 +1,1 @@
+the stl is moved 135 in the x direction and 125m in the y direction. z is fine

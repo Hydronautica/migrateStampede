@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+#include "../myVars" //Include global variables
+libs            (overset fvMotionSolvers );
+
+application     overInterDyMFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         300.0;
+
+deltaT          $modelTimestep;
+
+writeControl    adjustable;
+
+writeInterval   300.0;
+
+purgeWrite      1;
+
+writeFormat     binary;
+
+writePrecision  12;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  no;
+
+maxCo           15;
+
+maxAlphaCo      2;
+
+maxDeltaT       $modelTimestep;
+
+
+functions
+{
+    #includeIfPresent "../waveGaugesNProbes/waterlineWhole_controlDict";
+    #includeIfPresent "../waveGaugesNProbes/wavegauge_controlDict";
+    
+	/*yPlus
+    {
+    // Mandatory entries (unmodifiable)
+    type            yPlus;
+    libs            (fieldFunctionObjects);
+
+    // Optional (inherited) entries
+    writePrecision  8;
+    enabled         true;
+    log             true;
+    timeStart       0;
+    timeEnd         1000;
+    executeControl  timeStep;
+    executeInterval 1;
+    writeControl    timeStep;
+    writeInterval   100000000000;
+    }*/
+    forces
+    {
+        type            forces;
+        libs            (forces);
+        patches         (floatingObject);
+        rhoInf          998.8;
+        log             on;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   1;
+        CofR            (0 0 0);
+    }
+}
+
+// ************************************************************************* //

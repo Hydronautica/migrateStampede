@@ -1,0 +1,15 @@
+    wavegauge
+    {
+        type               surfaceElevation;
+
+        libs ( "libwaves2Foam.so" );
+        writeControl       timeStep;
+        writeInterval      5;
+
+        setFormat          raw;
+        interpolationScheme cellPointFace;
+        fields (alpha.water);
+
+        #includeIfPresent "../waveGaugesNProbes/wavegauge_sets";
+
+    }

@@ -1,0 +1,209 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version	2.0;
+    format	ascii;
+    class	dictionary;
+    object	waveProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+plat_offset_X       135;
+
+plat_offset_Y       125;
+
+hub_h               180;
+
+hub_x               13.45;
+
+D                   240;
+
+R                   120;
+
+span                120;
+
+chord               5.5;
+
+turb_mass           2254000;
+
+turb_comx           134.8;
+
+turb_comy           125;
+
+turb_comz           90;
+
+BL_thick            0.2;
+
+float_width         74;
+
+plat_mass           17839000;
+
+plat_comx           0;
+
+plat_comz           -14.94;
+
+surge_offset        0;
+
+plat_Ixx            12510000000;
+
+plat_Iyy            12510000000;
+
+plat_Izz            23670000000;
+
+plat_orientation    ( 1 0 0 0 1 0 0 0 1 );
+
+total_mass          20093000;
+
+total_comx          15.1216443538;
+
+total_comz          -3.16800179167;
+
+Ux                  12.76;
+
+I                   0.06;
+
+TSR                 5.2;
+
+rot_period          11.3633590547;
+
+z0                  0.12;
+
+water_depth         200;
+
+wave_period         9.45;
+
+wave_height         4.52;
+
+wave_length         140;
+
+omega_waves         0.664;
+
+k_waves             0.0448;
+
+waterNu             1e-06;
+
+U_ref               12.76;
+
+z_ref               180;
+
+z_0                 0.5;
+
+z_ground            9.492;
+
+in_len              140;
+
+out_len             140;
+
+sim_len             480;
+
+length              760;
+
+air_h               150;
+
+width               600;
+
+height              350;
+
+size_0              10.4;
+
+size_x              18.0133283987;
+
+CFLmax_noRotor      0.75;
+
+dtmax               0.0293887147335;
+
+CFLmax              0.4;
+
+dt0                 0.01;
+
+t_final             378;
+
+timePerPeriod       250;
+
+modelTimestep       0.0378;
+
+xmin                -245;
+
+xmax                515;
+
+ymin                -175;
+
+ymax                425;
+
+zmin                -200;
+
+zmax                150;
+
+l1                  300;
+
+l2                  840;
+
+l3                  780;
+
+w2                  300;
+
+w1                  150;
+
+w3                  150;
+
+h2                  220;
+
+h1                  100;
+
+h3                  30;
+
+seaLevel            0;
+
+seaLevelAsReference true;
+
+relaxationNames     ( inlet );
+
+initializationName  inlet;
+
+externalForcing     oceanWave3D;
+
+externalForcingCoeffs
+{
+    waveType            oceanWave3D;
+
+    nIntervals          1;
+    startTimes          nonuniform List<scalar>
+    1
+    (
+        0
+    );
+    endTimes            nonuniform List<scalar>
+    1
+    (
+        600
+    );
+
+    rampInterval        no;
+
+    mappingZone         inlet;
+    translateOpenFoamMesh ( 650 250 0 );
+}
+
+inletCoeffs
+{
+    waveType            externalSource;
+
+    relaxationZone
+    {
+        relaxationScheme    Spatial;
+        relaxationShape     Cylindrical;
+        centre              ( 135 125 0 );
+        rInner              150;
+        rOuter              520;
+    }
+}
+
+
+
+// ************************************************************************* //

@@ -1,0 +1,202 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+#include "../myVars" //Include global variables
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+geometry
+{
+   
+    refineOverset
+    {
+        type    searchableBox;
+        min     (#eval "$plat_offset_X-0.5*$D" #eval "$plat_offset_Y-0.5*$D" -30);
+        max     (#eval "$plat_offset_X+0.5*$D" #eval "$plat_offset_Y+0.5*$D" 30 );
+    }
+    FS_1
+    {
+        type    searchableBox;
+        min     ($xmin  #eval "$ymin" #eval "-1.5*$wave_height");
+        max     ($xmax  #eval "$ymax" #eval "2.0*$wave_height" );
+    }
+    FS_2
+    {
+        type    searchableBox;
+        min     ($xmin  #eval "$ymin" #eval "-1.2*$wave_height");
+        max     ($xmax  #eval "$ymax" #eval "1.2*$wave_height" );
+    }
+    near_wake
+    {
+        type searchableCylinder;
+        point1 (#eval "$hub_x-0.5*$D" 0 $hub_h);
+        point2 (#eval "$hub_x+1.5*$D" 0 $hub_h);
+        radius #eval "2.5*$D/2";       
+    }
+
+    turbine
+    {
+        type searchableCylinder;
+        point1 (#eval "$hub_x-0.10*$D" 0 $hub_h);
+        point2 (#eval "$hub_x+0.40*$D" 0 $hub_h);
+        radius #eval "2.25*$D/2";
+    }
+    
+
+};
+
+castellatedMeshControls
+{
+    maxLocalCells   200000000;
+    maxGlobalCells  300000000;
+    minRefinementCells 20;
+    nCellsBetweenLevels 3;
+    maxLoadUnbalance 0.1;
+    allowFreeStandingZoneFaces true;
+    resolveFeatureAngle     30;
+    features
+    (
+
+        
+ 	
+    );
+
+    refinementSurfaces
+    {
+        
+        
+    }
+
+    refinementRegions
+    {
+	FS_1
+        {
+            mode inside;
+            levels ((1e-5 1)); //First entry here is distance, which will be ignored unless mode = distance
+        }
+        FS_2
+        {
+            mode inside;
+            levels ((1e-5 1)); //First entry here is distance, which will be ignored unless mode = distance
+        }
+        refineOverset
+        {
+            mode inside;
+            levels ((1e-5 1)); //First entry here is distance, which will be ignored unless mode = distance
+        }  
+	near_wake
+        {
+            mode        inside;
+            levels      ((1e15 1));
+        }
+    
+        turbine
+        {
+            mode        inside;
+            levels      ((1e15 1));
+        }
+	}
+    locationInMesh ( #eval "$hub_x+0.40*$D" 0 $hub_h) ;
+}
+
+snapControls
+{
+    tolerance       1;
+    implicitFeatureSnap false;
+    explicitFeatureSnap true;
+    multiRegionFeatureSnap true;
+    detectNearSurfacesSnap true;
+    nSmoothPatch    5;
+    nSolveIter      50;
+    nRelaxIter      5;
+    nFeatureSnapIter 10;
+    nSmoothInternal 3;
+    nFaceSplitInterval 5;
+}
+
+addLayersControls
+{
+    layers
+    {
+        floater
+        {
+            nSurfaceLayers 4;
+        }
+    }
+    relativeSizes    true ;
+    expansionRatio    1.05 ;
+    finalLayerThickness   0.2 ;
+    featureAngle    180;
+    slipFeatureAngle 30;
+    nGrow           0;
+    nBufferCellsNoExtrude 0;
+    minMedialAxisAngle 90;
+    maxFaceThicknessRatio 0.2;
+    maxThicknessToMedialRatio 0.3;
+    minThickness    0.1;
+    nLayerIter      75;
+    nRelaxIter      7;
+    nSmoothSurfaceNormals 10;
+    nSmoothNormals  3;
+    nSmoothThickness 10;
+    nRelaxedIter    10;
+    nMedialAxisIter 10;
+}
+
+meshQualityControls
+{
+    minVol          1e-20;
+    minTetQuality   1e-20;
+    minArea         1e-20;
+    minTwist        0.05;
+    minDeterminant  1e-06;
+    minFaceWeight   0.02;
+    minVolRatio     0.01;
+    minTriangleTwist -1;
+    minFlatness     0.5;
+    maxNonOrtho     70;
+    maxBoundarySkewness 5;
+    maxInternalSkewness 4;
+    maxConcave      80;
+    nSmoothScale    4;
+    errorReduction  0.75;
+
+    relaxed
+    {
+        minVol          1e-30;
+        minTetQuality   1e-30;
+        minArea         1e-30;
+        minTwist        0.001;
+        minDeterminant  1e-06;
+        minFaceWeight   1e-06;
+        minVolRatio     0.01;
+        minTriangleTwist -1;
+        minFlatness     0.5;
+        maxNonOrtho     75;
+        maxBoundarySkewness 10;
+        maxInternalSkewness 8;
+        maxConcave      80;
+        nSmoothScale    4;
+        errorReduction  0.75;
+    }
+}
+
+mergeTolerance  1e-06;
+
+debug           0;
+
+
+// ************************************************************************* //
